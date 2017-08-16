@@ -1,0 +1,36 @@
+{
+    "name"        : "php-design-patterns/chain-of-responsibility",
+    "description" : "PhpDesignPatterns",
+    "type"        : "library",
+    "keywords"    : [
+        "patterns",
+        "design-patterns"
+    ],
+    "license"     : "MIT",
+    "authors"     : [
+        {
+            "name"    : "Danila Korotkov (Jagepard)",
+            "email"   : "jagepard@yandex.ru",
+            "homepage": "https://jagepard.ru",
+            "role"    : "Developer"
+        }
+    ],
+
+    "support"     : {
+        "email": "jagepard@yandex.ru",
+        "skype": "jagepard.ru"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Behavioral\\ChainOfResponsibility\\":"src/"
+        }
+    },
+
+    "require": {
+        "php": ">=7.0"
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable" : true
+}

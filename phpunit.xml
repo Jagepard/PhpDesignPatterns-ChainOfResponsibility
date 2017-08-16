@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true"
+         stopOnFailure="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         bootstrap="src/tests/bootstrap.php"
+>
+    <testsuites>
+        <testsuite name="PhpDesignPatterns-ChainOfResponsibility">
+            <directory>src/tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-html" target="src/tests/build/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-text" target="src/tests/build/coverage.txt"/>
+        <log type="coverage-clover" target="src/tests/build/logs/clover.xml"/>
+    </logging>
+    <filter>
+        <blacklist>
+            <directory suffix=".php">./vendor</directory>
+        </blacklist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <file>./src/tests/bootstrap.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
