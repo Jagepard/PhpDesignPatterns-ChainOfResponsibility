@@ -24,15 +24,15 @@ class Chain
     protected $chain;
 
     /**
-     * @param $message
-     *
-     * @return mixed|void
+     * @param $count
      */
-    public function run($message): void
+    public function run(int $count): void
     {
+        // First element of chain
         $itemName = $this->getChain(0);
         $chain    = new $itemName;
-        $chain->request($message, $this->getChain());
+
+        $chain->request($count, $this->getChain());
     }
 
     /**
@@ -46,10 +46,10 @@ class Chain
     }
 
     /**
-     * @param string $chain
+     * @param string $className
      */
-    public function addToChain(string $chain): void
+    public function addToChain(string $className): void
     {
-        $this->chain[] = $chain;
+        $this->chain[] = $className;
     }
 }

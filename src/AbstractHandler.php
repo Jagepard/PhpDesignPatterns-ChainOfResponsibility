@@ -19,46 +19,25 @@ abstract class AbstractHandler
 {
 
     /**
-     * @var AbstractHandler
+     * @param int   $count
+     * @param array $chain
+     * @return mixed
      */
-    protected $next;
+    abstract public function request(int $count, array $chain);
 
     /**
-     * @param int   $message
+     * @param int   $count
      * @param array $chain
      */
-    abstract public function request(int $message, array $chain);
-
-    /**
-     * @param AbstractHandler $next
-     */
-    public function setNext(AbstractHandler $next): void
+    protected function next(int $count, array $chain): void
     {
-        $this->next = $next;
-    }
+        $count--;
 
-    /**
-     * @return AbstractHandler
-     */
-    public function getNext(): AbstractHandler
-    {
-        return $this->next;
-    }
-
-
-    /**
-     * @param int   $message
-     * @param array $chain
-     */
-    protected function next(int $message, array $chain): void
-    {
-        array_shift($chain);
-        $message--;
-
-        if ($message) {
+        if ($count) {
+            array_shift($chain);
             $className = isset($chain[0]) ? $chain[0] : $chain;
-            $this->setNext(new $className);
-            $this->getNext()->request($message, $chain);
+            $nextClass = new $className;
+            $nextClass->request($count, $chain);
         } else {
             print "\n";
         }
