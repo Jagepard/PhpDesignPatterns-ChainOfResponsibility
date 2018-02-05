@@ -18,12 +18,13 @@ class WarningHandler extends AbstractHandler
 {
 
     /**
-     * @param int   $message
+     * @param int   $count
      * @param array $chain
      */
-    public function request(int $message, array $chain)
+    public function request(int $count, array $chain): void
     {
         print "WARNING \n";
-        $this->next($message, $chain);
+
+        $this->next($count, $chain);
     }
 }
