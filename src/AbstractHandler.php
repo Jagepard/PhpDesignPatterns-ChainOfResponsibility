@@ -26,7 +26,9 @@ abstract class AbstractHandler
     public function __construct(int $count, array $chain)
     {
         $this->request();
-        $this->next($count, $chain);
+
+        array_shift($chain);
+        $this->next($count - 1, $chain);
     }
 
     abstract public function request();
@@ -37,10 +39,7 @@ abstract class AbstractHandler
      */
     protected function next(int $count, array $chain): void
     {
-        $count--;
-
         if ($count) {
-            array_shift($chain);
             $className = $chain[0] ?? $chain;
             new $className($count, $chain);
         } else {
