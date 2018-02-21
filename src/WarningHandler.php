@@ -17,14 +17,8 @@ namespace Behavioral\ChainOfResponsibility;
 class WarningHandler extends AbstractHandler
 {
 
-    /**
-     * @param int   $count
-     * @param array $chain
-     */
-    public function request(int $count, array $chain): void
+    public function request(): void
     {
         print "WARNING \n";
-
-        $this->next($count, $chain);
     }
 }

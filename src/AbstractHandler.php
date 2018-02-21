@@ -19,11 +19,17 @@ abstract class AbstractHandler
 {
 
     /**
+     * AbstractHandler constructor.
      * @param int   $count
      * @param array $chain
-     * @return mixed
      */
-    abstract public function request(int $count, array $chain);
+    public function __construct(int $count, array $chain)
+    {
+        $this->request();
+        $this->next($count, $chain);
+    }
+
+    abstract public function request();
 
     /**
      * @param int   $count
@@ -35,9 +41,8 @@ abstract class AbstractHandler
 
         if ($count) {
             array_shift($chain);
-            $className = isset($chain[0]) ? $chain[0] : $chain;
-            $nextClass = new $className;
-            $nextClass->request($count, $chain);
+            $className = $chain[0] ?? $chain;
+            new $className($count, $chain);
         } else {
             print "\n";
         }

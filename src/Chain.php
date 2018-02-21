@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
@@ -28,11 +28,8 @@ class Chain
      */
     public function run(int $count): void
     {
-        // First element of chain
         $itemName = $this->getChain(0);
-        $chain    = new $itemName;
-
-        $chain->request($count, $this->getChain());
+        new $itemName($count, $this->getChain());
     }
 
     /**

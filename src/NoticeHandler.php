@@ -18,14 +18,8 @@ namespace Behavioral\ChainOfResponsibility;
 class NoticeHandler extends AbstractHandler
 {
 
-    /**
-     * @param int   $count
-     * @param array $chain
-     */
-    public function request(int $count, array $chain): void
+    public function request(): void
     {
         print "NOTICE \n";
-
-        $this->next($count, $chain);
     }
 }
