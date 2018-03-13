@@ -39,7 +39,7 @@ abstract class AbstractHandler
      */
     protected function next(int $count, array $chain): void
     {
-        if ($count) {
+        if ($count and count($chain)) {
             $className = $chain[0] ?? $chain;
             new $className($count, $chain);
         } else {

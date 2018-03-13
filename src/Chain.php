@@ -24,12 +24,14 @@ class Chain
     protected $chain;
 
     /**
-     * @param $count
+     * @param int $count
      */
     public function run(int $count): void
     {
-        $itemName = $this->getChain(0);
-        new $itemName($count, $this->getChain());
+        if ($this->getChain()) {
+            $itemName = $this->getChain(0);
+            new $itemName($count, $this->getChain());
+        }
     }
 
     /**
