@@ -4,22 +4,20 @@ declare(strict_types=1);
 
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2017, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Behavioral\ChainOfResponsibility;
 
 /**
  * Class Chain
- *
  * @package Behavioral\ChainOfResponsibility
  */
 class Chain
 {
 
     /**
-     * @var
+     * @var array
      */
     protected $chain;
 
@@ -28,20 +26,10 @@ class Chain
      */
     public function run(int $count): void
     {
-        if ($this->getChain()) {
-            $itemName = $this->getChain(0);
-            new $itemName($count, $this->getChain());
+        if (count($this->chain)) {
+            $firstChain = new $this->chain[0]();
+            $firstChain($count, $this->chain);
         }
-    }
-
-    /**
-     * @param $key
-     *
-     * @return null
-     */
-    public function getChain(int $key = null)
-    {
-        return $this->chain[$key] ?? $this->chain;
     }
 
     /**

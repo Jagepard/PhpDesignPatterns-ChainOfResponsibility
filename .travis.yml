@@ -12,5 +12,5 @@ script:
     - mkdir -p build/logs
     - phpunit --coverage-clover build/logs/clover.xml
 
-after_script:
-    - php vendor/bin/coveralls -v
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
