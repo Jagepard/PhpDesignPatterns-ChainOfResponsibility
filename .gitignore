@@ -1,10 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 /composer.lock
-/app/resources/twig/compilation_cache/
-/.sass-cache/
 /vendor/
 /log/
-/app/public/css/theme.css.map
-/app/public/vendor/
-/src/tests/build/
+/tests/build/
+/training/

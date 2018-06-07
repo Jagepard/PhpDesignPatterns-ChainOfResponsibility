@@ -1,18 +1,16 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
- * @copyright Copyright (c) 2017, Korotkov Danila
- * @license   http://www.gnu.org/licenses/gpl.html GNU GPLv3.0
+ * @license   https://mit-license.org/ MIT
  */
 
 namespace Behavioral\ChainOfResponsibility;
 
 /**
  * Class AbstractHandler
- *
  * @package Behavioral\ChainOfResponsibility
  */
 abstract class AbstractHandler
@@ -23,15 +21,12 @@ abstract class AbstractHandler
      * @param int   $count
      * @param array $chain
      */
-    public function __construct(int $count, array $chain)
+    public function __invoke(int $count, array $chain)
     {
-        $this->request();
-
         array_shift($chain);
+        $this->request();
         $this->next($count - 1, $chain);
     }
-
-    abstract public function request();
 
     /**
      * @param int   $count
@@ -39,11 +34,14 @@ abstract class AbstractHandler
      */
     protected function next(int $count, array $chain): void
     {
-        if ($count and count($chain)) {
-            $className = $chain[0] ?? $chain;
-            new $className($count, $chain);
-        } else {
-            print "\n";
+        if (!($count and count($chain))) {
+            printf(PHP_EOL);
+            return;
         }
+
+        $nextChain = new $chain[0] ?? new $chain;
+        $nextChain($count, $chain);
     }
+
+    abstract public function request();
 }
