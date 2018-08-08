@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# ChainOfResponsibility
+# ChainOfResponsibility | [API](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/ChainOfResponsibility.md "Documentation API")
 Цепочка обязанностей
 
 Предятавляет собой цепочку объектов для обработки вызова в последовательном порядке. Если один объект не может справиться с вызовом, он делегирует вызов для следующего в цепи и так далее.
