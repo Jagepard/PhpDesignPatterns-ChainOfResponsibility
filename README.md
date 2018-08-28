@@ -10,4 +10,4 @@
 
 Предятавляет собой цепочку объектов для обработки вызова в последовательном порядке. Если один объект не может справиться с вызовом, он делегирует вызов для следующего в цепи и так далее.
 
-![ChainOfResponsibility](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/blob/master/ChainOfResponsibility.png)
+![ChainOfResponsibility](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/blob/master/UML.png)
