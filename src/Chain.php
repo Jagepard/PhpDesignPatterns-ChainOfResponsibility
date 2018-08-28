@@ -26,10 +26,12 @@ class Chain
      */
     public function run(int $count): void
     {
-        if (count($this->chain)) {
-            $firstChain = new $this->chain[0]();
-            $firstChain($count, $this->chain);
+        for ($i = 0; $i < $count; $i++) {
+            $chain = new $this->chain[$i]();
+            $chain->request();
         }
+
+        printf("%s", "\n");
     }
 
     /**

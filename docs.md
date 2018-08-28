@@ -49,9 +49,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__invoke(</strong><em>int/\integer</em> <strong>$count</strong>, <em>array</em> <strong>$chain</strong>)</strong> : <em>void</em><br /><em>AbstractHandler constructor.</em> |
 | public | <strong>abstract request()</strong> : <em>void</em> |
-| protected | <strong>next(</strong><em>int/\integer</em> <strong>$count</strong>, <em>array</em> <strong>$chain</strong>)</strong> : <em>void</em> |
 
 <hr />
 
