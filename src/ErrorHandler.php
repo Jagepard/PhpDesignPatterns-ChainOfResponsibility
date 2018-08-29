@@ -17,16 +17,13 @@ class ErrorHandler extends AbstractHandler
 {
 
     /**
-     * @param $handler
-     * @param $chain
+     * @param string $event
      */
-    public function request(string $handler, $chain): void
+    public function request(string $event): void
     {
-        if ($handler == ErrorHandler::class) {
+        if ($event == ErrorHandler::class) {
             printf('%s' . PHP_EOL, 'ERROR');
             return;
         }
-
-        $this->next($handler, $chain);
     }
 }

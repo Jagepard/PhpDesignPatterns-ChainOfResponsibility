@@ -17,16 +17,13 @@ class NoticeHandler extends AbstractHandler
 {
 
     /**
-     * @param $handler
-     * @param $chain
+     * @param string $event
      */
-    public function request(string $handler, $chain): void
+    public function request(string $event): void
     {
-        if ($handler == NoticeHandler::class) {
+        if ($event == NoticeHandler::class) {
             printf('%s' . PHP_EOL, 'NOTICE');
             return;
         }
-
-        $this->next($handler, $chain);
     }
 }

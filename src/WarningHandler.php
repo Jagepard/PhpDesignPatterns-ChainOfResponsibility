@@ -17,16 +17,13 @@ class WarningHandler extends AbstractHandler
 {
 
     /**
-     * @param $handler
-     * @param $chain
+     * @param string $event
      */
-    public function request(string $handler, $chain): void
+    public function request(string $event): void
     {
-        if ($handler == WarningHandler::class) {
+        if ($event == WarningHandler::class) {
             printf('%s' . PHP_EOL, 'WARNING');
             return;
         }
-
-        $this->next($handler, $chain);
     }
 }

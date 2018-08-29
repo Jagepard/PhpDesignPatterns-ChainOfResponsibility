@@ -26,9 +26,9 @@ class Chain
      */
     public function run(string $event): void
     {
-        $chain = new $this->chain[0]();
+        $handler = new $this->chain[0]();
         array_shift($this->chain);
-        $chain->request($event, $this->chain);
+        !isset($this->chain) ?: $handler->request($event, $this->chain) ;
     }
 
     /**
