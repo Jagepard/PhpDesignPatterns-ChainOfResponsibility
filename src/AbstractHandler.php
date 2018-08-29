@@ -18,6 +18,29 @@ abstract class AbstractHandler
 
     /**
      * @param string $event
+     * @param        $chain
      */
-    abstract public function request(string $event): void;
+    public function request(string $event, $chain): void
+    {
+        $this->message($event);
+        $this->next($event, $chain);
+    }
+
+    /**
+     * @param string $event
+     * @param        $chain
+     * @return mixed
+     */
+    abstract protected function next(string $event, $chain);
+
+    /**
+     * @param string $event
+     */
+    protected function message(string $event)
+    {
+        if ($event == static::class) {
+            printf('%s' . PHP_EOL, $event);
+            return;
+        }
+    }
 }

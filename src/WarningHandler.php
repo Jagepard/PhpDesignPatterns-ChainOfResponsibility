@@ -16,14 +16,5 @@ namespace Behavioral\ChainOfResponsibility;
 class WarningHandler extends AbstractHandler
 {
 
-    /**
-     * @param string $event
-     */
-    public function request(string $event): void
-    {
-        if ($event == WarningHandler::class) {
-            printf('%s' . PHP_EOL, 'WARNING');
-            return;
-        }
-    }
+    use NextTrait;
 }

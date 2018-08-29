@@ -10,6 +10,6 @@ $chain->addToChain(NoticeHandler::class);
 $chain->addToChain(WarningHandler::class);
 $chain->addToChain(ErrorHandler::class);
 
-$chain->run(NoticeHandler::class);
-$chain->run(WarningHandler::class);
 $chain->run(ErrorHandler::class);
+$chain->run(WarningHandler::class);
+$chain->run(NoticeHandler::class);

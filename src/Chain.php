@@ -16,6 +16,8 @@ namespace Behavioral\ChainOfResponsibility;
 class Chain
 {
 
+    use NextTrait;
+
     /**
      * @var array
      */
@@ -26,9 +28,7 @@ class Chain
      */
     public function run(string $event): void
     {
-        $handler = new $this->chain[0]();
-        array_shift($this->chain);
-        !isset($this->chain) ?: $handler->request($event, $this->chain) ;
+        $this->next($event, $this->chain);
     }
 
     /**
