@@ -20,7 +20,7 @@ class ErrorHandler extends AbstractHandler
      * @param $handler
      * @param $chain
      */
-    public function request($handler, $chain): void
+    public function request(string $handler, $chain): void
     {
         if ($handler == ErrorHandler::class) {
             printf('%s' . PHP_EOL, 'ERROR');
