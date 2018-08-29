@@ -14,7 +14,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request()</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>mixed/\string</em> <strong>$handler</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
@@ -26,7 +26,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request()</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>mixed/\string</em> <strong>$handler</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
@@ -39,7 +39,7 @@
 | Visibility | Function |
 |:-----------|:---------|
 | public | <strong>addToChain(</strong><em>\string</em> <strong>$className</strong>)</strong> : <em>void</em> |
-| public | <strong>run(</strong><em>int/\integer</em> <strong>$count</strong>)</strong> : <em>void</em> |
+| public | <strong>run(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
 
 <hr />
 
@@ -49,7 +49,8 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>abstract request()</strong> : <em>void</em> |
+| public | <strong>abstract request(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
+| protected | <strong>next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
 
 <hr />
 
@@ -59,7 +60,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request()</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>mixed/\string</em> <strong>$handler</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
