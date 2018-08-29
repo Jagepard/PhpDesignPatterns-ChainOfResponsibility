@@ -14,7 +14,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request(</strong><em>\string</em> <strong>$handler</strong>)</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
@@ -26,7 +26,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request(</strong><em>\string</em> <strong>$handler</strong>)</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
@@ -59,7 +59,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>request(</strong><em>\string</em> <strong>$handler</strong>)</strong> : <em>void</em> |
+| public | <strong>request(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
 
 *This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
