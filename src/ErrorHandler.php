@@ -16,14 +16,5 @@ namespace Behavioral\ChainOfResponsibility;
 class ErrorHandler extends AbstractHandler
 {
 
-    /**
-     * @param string $event
-     */
-    public function request(string $event): void
-    {
-        if ($event == ErrorHandler::class) {
-            printf('%s' . PHP_EOL, 'ERROR');
-            return;
-        }
-    }
+    use NextTrait;
 }

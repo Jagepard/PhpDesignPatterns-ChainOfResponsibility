@@ -49,8 +49,8 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
         $this->chain->run(ErrorHandler::class);
         $error = ob_get_clean();
 
-        $this->assertEquals($notice, "NOTICE\n");
-        $this->assertEquals($warning, "WARNING\n");
-        $this->assertEquals($error, "ERROR\n");
+        $this->assertEquals($notice, NoticeHandler::class . "\n");
+        $this->assertEquals($warning, WarningHandler::class . "\n");
+        $this->assertEquals($error, ErrorHandler::class . "\n");
     }
 }
