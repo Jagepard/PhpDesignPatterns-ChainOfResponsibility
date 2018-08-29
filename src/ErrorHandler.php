@@ -16,8 +16,17 @@ namespace Behavioral\ChainOfResponsibility;
 class ErrorHandler extends AbstractHandler
 {
 
-    public function request(): void
+    /**
+     * @param $handler
+     * @param $chain
+     */
+    public function request($handler, $chain): void
     {
-        printf('%s' . PHP_EOL, 'ERROR');
+        if ($handler == ErrorHandler::class) {
+            printf('%s' . PHP_EOL, 'ERROR');
+            return;
+        }
+
+        $this->next($handler, $chain);
     }
 }

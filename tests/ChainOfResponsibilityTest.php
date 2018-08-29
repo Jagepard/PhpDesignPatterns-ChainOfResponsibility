@@ -38,19 +38,19 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testChainRun(): void
     {
         ob_start();
-        $this->chain->run(1);
+        $this->chain->run(NoticeHandler::class);
         $notice = ob_get_clean();
 
         ob_start();
-        $this->chain->run(2);
+        $this->chain->run(WarningHandler::class);
         $warning = ob_get_clean();
 
         ob_start();
-        $this->chain->run(3);
+        $this->chain->run(ErrorHandler::class);
         $error = ob_get_clean();
 
-        $this->assertEquals($notice, "NOTICE\n\n");
-        $this->assertEquals($warning, "NOTICE\nWARNING\n\n");
-        $this->assertEquals($error, "NOTICE\nWARNING\nERROR\n\n");
+        $this->assertEquals($notice, "NOTICE\n");
+        $this->assertEquals($warning, "WARNING\n");
+        $this->assertEquals($error, "ERROR\n");
     }
 }

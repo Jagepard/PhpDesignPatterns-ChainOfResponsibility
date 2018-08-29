@@ -16,8 +16,17 @@ namespace Behavioral\ChainOfResponsibility;
 class WarningHandler extends AbstractHandler
 {
 
-    public function request(): void
+    /**
+     * @param $handler
+     * @param $chain
+     */
+    public function request($handler, $chain): void
     {
-        printf('%s' . PHP_EOL, 'WARNING');
+        if ($handler == WarningHandler::class) {
+            printf('%s' . PHP_EOL, 'WARNING');
+            return;
+        }
+
+        $this->next($handler, $chain);
     }
 }

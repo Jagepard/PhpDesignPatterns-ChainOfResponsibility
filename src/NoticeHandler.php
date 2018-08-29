@@ -16,8 +16,17 @@ namespace Behavioral\ChainOfResponsibility;
 class NoticeHandler extends AbstractHandler
 {
 
-    public function request(): void
+    /**
+     * @param $handler
+     * @param $chain
+     */
+    public function request($handler, $chain): void
     {
-        printf('%s' . PHP_EOL, 'NOTICE');
+        if ($handler == NoticeHandler::class) {
+            printf('%s' . PHP_EOL, 'NOTICE');
+            return;
+        }
+
+        $this->next($handler, $chain);
     }
 }

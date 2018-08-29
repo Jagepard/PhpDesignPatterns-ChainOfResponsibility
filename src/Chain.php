@@ -22,16 +22,13 @@ class Chain
     protected $chain;
 
     /**
-     * @param int $count
+     * @param string $event
      */
-    public function run(int $count): void
+    public function run(string $event): void
     {
-        for ($i = 0; $i < $count; $i++) {
-            $chain = new $this->chain[$i]();
-            $chain->request();
-        }
-
-        printf("%s", "\n");
+        $chain = new $this->chain[0]();
+        array_shift($this->chain);
+        $chain->request($event, $this->chain);
     }
 
     /**
