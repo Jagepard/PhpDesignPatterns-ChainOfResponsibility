@@ -15,6 +15,5 @@ namespace Behavioral\ChainOfResponsibility;
  */
 class NoticeHandler extends AbstractHandler
 {
-
     use NextTrait;
 }

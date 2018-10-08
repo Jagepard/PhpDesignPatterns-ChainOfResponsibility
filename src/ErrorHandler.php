@@ -15,6 +15,5 @@ namespace Behavioral\ChainOfResponsibility;
  */
 class ErrorHandler extends AbstractHandler
 {
-
     use NextTrait;
 }
