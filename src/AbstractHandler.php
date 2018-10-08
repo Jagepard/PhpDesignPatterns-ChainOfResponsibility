@@ -15,7 +15,6 @@ namespace Behavioral\ChainOfResponsibility;
  */
 abstract class AbstractHandler
 {
-
     /**
      * @param string $event
      * @param        $chain
@@ -31,12 +30,12 @@ abstract class AbstractHandler
      * @param        $chain
      * @return mixed
      */
-    abstract protected function next(string $event, $chain);
+    abstract protected function next(string $event, $chain): void;
 
     /**
      * @param string $event
      */
-    protected function message(string $event)
+    protected function message(string $event): void
     {
         if ($event == static::class) {
             printf('%s' . PHP_EOL, $event);

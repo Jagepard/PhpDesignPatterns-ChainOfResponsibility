@@ -15,12 +15,11 @@ namespace Behavioral\ChainOfResponsibility;
  */
 trait NextTrait
 {
-
     /**
      * @param string $event
      * @param        $chain
      */
-    protected function next(string $event, $chain)
+    protected function next(string $event, $chain): void
     {
         $handler = array_shift($chain);
 

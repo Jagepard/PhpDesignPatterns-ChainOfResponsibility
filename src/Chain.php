@@ -15,7 +15,6 @@ namespace Behavioral\ChainOfResponsibility;
  */
 class Chain
 {
-
     use NextTrait;
 
     /**
@@ -24,18 +23,18 @@ class Chain
     protected $chain;
 
     /**
-     * @param string $event
-     */
-    public function run(string $event): void
-    {
-        $this->next($event, $this->chain);
-    }
-
-    /**
      * @param string $className
      */
     public function addToChain(string $className): void
     {
         $this->chain[] = $className;
+    }
+
+    /**
+     * @param string $event
+     */
+    public function run(string $event): void
+    {
+        $this->next($event, $this->chain);
     }
 }
