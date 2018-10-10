@@ -15,6 +15,7 @@ namespace Behavioral\ChainOfResponsibility;
  */
 trait NextTrait
 {
+
     /**
      * @param string $event
      * @param        $chain

@@ -15,6 +15,7 @@ namespace Behavioral\ChainOfResponsibility;
  */
 abstract class AbstractHandler
 {
+
     /**
      * @param string $event
      * @param        $chain
