@@ -21,6 +21,7 @@ use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
  */
 class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 {
+
     /**
      * @var Chain
      */
