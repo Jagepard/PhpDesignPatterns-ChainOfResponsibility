@@ -16,8 +16,6 @@ namespace Behavioral\ChainOfResponsibility;
 class Chain
 {
 
-    use NextTrait;
-
     /**
      * @var array
      */
