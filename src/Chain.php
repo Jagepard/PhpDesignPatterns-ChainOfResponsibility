@@ -16,12 +16,10 @@ namespace Behavioral\ChainOfResponsibility;
 class Chain
 {
 
-    use NextTrait;
-
     /**
      * @var array
      */
-    protected $chain;
+    protected $chain = [];
 
     /**
      * @param string $className
@@ -36,6 +34,13 @@ class Chain
      */
     public function run(string $event): void
     {
-        $this->next($event, $this->chain);
+        foreach ($this->chain as $item) {
+            $item = new $item();
+            $item();
+
+            if (get_class($item) == $event) {
+                return;
+            }
+        }
     }
 }

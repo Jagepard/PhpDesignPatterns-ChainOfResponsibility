@@ -13,7 +13,7 @@ namespace Behavioral\ChainOfResponsibility;
  * Class WarningHandler
  * @package Behavioral\ChainOfResponsibility
  */
-class WarningHandler extends AbstractHandler
+class WarningHandler
 {
 
     use NextTrait;

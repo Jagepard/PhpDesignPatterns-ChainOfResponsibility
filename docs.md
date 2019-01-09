@@ -3,7 +3,6 @@
 - [\Behavioral\ChainOfResponsibility\WarningHandler](#class-behavioralchainofresponsibilitywarninghandler)
 - [\Behavioral\ChainOfResponsibility\NoticeHandler](#class-behavioralchainofresponsibilitynoticehandler)
 - [\Behavioral\ChainOfResponsibility\Chain](#class-behavioralchainofresponsibilitychain)
-- [\Behavioral\ChainOfResponsibility\AbstractHandler (abstract)](#class-behavioralchainofresponsibilityabstracthandler-abstract)
 - [\Behavioral\ChainOfResponsibility\ErrorHandler](#class-behavioralchainofresponsibilityerrorhandler)
 
 <hr />
@@ -14,9 +13,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| protected | <strong>next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
-
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
+| public | <strong>__invoke()</strong> : <em>void</em> |
 
 <hr />
 
@@ -26,9 +23,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| protected | <strong>next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
-
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
+| public | <strong>__invoke()</strong> : <em>void</em> |
 
 <hr />
 
@@ -40,19 +35,6 @@
 |:-----------|:---------|
 | public | <strong>addToChain(</strong><em>\string</em> <strong>$className</strong>)</strong> : <em>void</em> |
 | public | <strong>run(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
-| protected | <strong>next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
-
-<hr />
-
-### Class: \Behavioral\ChainOfResponsibility\AbstractHandler (abstract)
-
-> Class AbstractHandler
-
-| Visibility | Function |
-|:-----------|:---------|
-| public | <strong>request(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
-| protected | <strong>message(</strong><em>\string</em> <strong>$event</strong>)</strong> : <em>void</em> |
-| protected | <strong>abstract next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>mixed</em> |
 
 <hr />
 
@@ -62,7 +44,5 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| protected | <strong>next(</strong><em>\string</em> <strong>$event</strong>, <em>mixed</em> <strong>$chain</strong>)</strong> : <em>void</em> |
-
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
+| public | <strong>__invoke()</strong> : <em>void</em> |
 

@@ -16,19 +16,8 @@ namespace Behavioral\ChainOfResponsibility;
 trait NextTrait
 {
 
-    /**
-     * @param string $event
-     * @param        $chain
-     */
-    protected function next(string $event, $chain): void
+    public function __invoke(): void
     {
-        $handler = array_shift($chain);
-
-        if (!isset($handler)) {
-            return;
-        }
-
-        $handler = new $handler();
-        $handler->request($event, $chain);
+        printf('%s' . PHP_EOL, __CLASS__);
     }
 }
