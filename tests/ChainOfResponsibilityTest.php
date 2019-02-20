@@ -21,7 +21,6 @@ use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
  */
 class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 {
-
     /**
      * @var Chain
      */
@@ -30,9 +29,9 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     protected function setUp(): void
     {
         $this->chain = new Chain();
-        $this->chain->addToChain(NoticeHandler::class);
-        $this->chain->addToChain(WarningHandler::class);
-        $this->chain->addToChain(ErrorHandler::class);
+        $this->chain->addToChain(new NoticeHandler);
+        $this->chain->addToChain(new WarningHandler);
+        $this->chain->addToChain(new ErrorHandler);
     }
 
     public function testChainRun(): void
