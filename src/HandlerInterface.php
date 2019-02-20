@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * @author    : Korotkov Danila <dankorot@gmail.com>
  * @license   https://mit-license.org/ MIT
@@ -10,10 +8,10 @@ declare(strict_types=1);
 namespace Behavioral\ChainOfResponsibility;
 
 /**
- * Class WarningHandler
+ * Interface HandlerInterface
  * @package Behavioral\ChainOfResponsibility
  */
-class WarningHandler implements HandlerInterface
+interface HandlerInterface
 {
-    use NextTrait;
+    public function __invoke(): void;
 }

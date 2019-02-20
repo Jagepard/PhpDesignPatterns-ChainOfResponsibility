@@ -13,8 +13,7 @@ namespace Behavioral\ChainOfResponsibility;
  * Class NoticeHandler
  * @package Behavioral\ChainOfResponsibility
  */
-class NoticeHandler
+class NoticeHandler implements HandlerInterface
 {
-
     use NextTrait;
 }

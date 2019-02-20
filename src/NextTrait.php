@@ -15,7 +15,6 @@ namespace Behavioral\ChainOfResponsibility;
  */
 trait NextTrait
 {
-
     public function __invoke(): void
     {
         printf('%s' . PHP_EOL, __CLASS__);
