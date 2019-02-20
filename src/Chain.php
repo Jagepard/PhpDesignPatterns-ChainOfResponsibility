@@ -15,18 +15,17 @@ namespace Behavioral\ChainOfResponsibility;
  */
 class Chain
 {
-
     /**
      * @var array
      */
     protected $chain = [];
 
     /**
-     * @param string $className
+     * @param HandlerInterface $handler
      */
-    public function addToChain(string $className): void
+    public function addToChain(HandlerInterface $handler): void
     {
-        $this->chain[] = $className;
+        $this->chain[get_class($handler)] = $handler;
     }
 
     /**
@@ -35,7 +34,6 @@ class Chain
     public function run(string $event): void
     {
         foreach ($this->chain as $item) {
-            $item = new $item();
             $item();
 
             if (get_class($item) == $event) {

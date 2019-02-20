@@ -13,8 +13,7 @@ namespace Behavioral\ChainOfResponsibility;
  * Class ErrorHandler
  * @package Behavioral\ChainOfResponsibility
  */
-class ErrorHandler
+class ErrorHandler implements HandlerInterface
 {
-
     use NextTrait;
 }
