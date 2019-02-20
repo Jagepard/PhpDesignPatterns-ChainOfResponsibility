@@ -18,7 +18,7 @@ class Chain
     /**
      * @var array
      */
-    protected $chain = [];
+    private $chain = [];
 
     /**
      * @param HandlerInterface $handler
