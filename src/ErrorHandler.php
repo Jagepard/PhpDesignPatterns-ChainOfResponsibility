@@ -11,5 +11,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 class ErrorHandler implements HandlerInterface
 {
-    use NextTrait;
+    use MiddlewareTrait;
 }

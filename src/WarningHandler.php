@@ -11,5 +11,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 class WarningHandler implements HandlerInterface
 {
-    use NextTrait;
+    use MiddlewareTrait;
 }

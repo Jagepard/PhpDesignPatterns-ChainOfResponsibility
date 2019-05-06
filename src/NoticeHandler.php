@@ -11,5 +11,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 class NoticeHandler implements HandlerInterface
 {
-    use NextTrait;
+    use MiddlewareTrait;
 }
