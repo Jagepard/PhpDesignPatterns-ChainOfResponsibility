@@ -7,9 +7,9 @@
 
 namespace Behavioral\ChainOfResponsibility;
 
-trait NextTrait
+trait MiddlewareTrait
 {
-    public function __invoke(): void
+    public function execute(): void
     {
         printf('%s' . PHP_EOL, __CLASS__);
     }
