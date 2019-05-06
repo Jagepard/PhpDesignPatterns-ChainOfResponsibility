@@ -9,5 +9,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 interface HandlerInterface
 {
-    public function __invoke(): void;
+    public function execute(): void;
 }

@@ -30,9 +30,9 @@ class Chain
     public function run(string $event): void
     {
         foreach ($this->chain as $item) {
-            $item();
+            $item->execute();
 
-            if (get_class($item) == $event) {
+            if (get_class($item) === $event) {
                 return;
             }
         }
