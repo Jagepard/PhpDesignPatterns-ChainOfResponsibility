@@ -10,11 +10,9 @@
 
 ### Class: \Behavioral\ChainOfResponsibility\WarningHandler
 
-> Class WarningHandler
-
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__invoke()</strong> : <em>void</em> |
+| public | <strong>execute()</strong> : <em>void</em> |
 
 *This class implements [\Behavioral\ChainOfResponsibility\HandlerInterface](#interface-behavioralchainofresponsibilityhandlerinterface)*
 
@@ -22,19 +20,15 @@
 
 ### Class: \Behavioral\ChainOfResponsibility\NoticeHandler
 
-> Class NoticeHandler
-
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__invoke()</strong> : <em>void</em> |
+| public | <strong>execute()</strong> : <em>void</em> |
 
 *This class implements [\Behavioral\ChainOfResponsibility\HandlerInterface](#interface-behavioralchainofresponsibilityhandlerinterface)*
 
 <hr />
 
 ### Class: \Behavioral\ChainOfResponsibility\Chain
-
-> Class Chain
 
 | Visibility | Function |
 |:-----------|:---------|
@@ -45,21 +39,17 @@
 
 ### Interface: \Behavioral\ChainOfResponsibility\HandlerInterface
 
-> Interface HandlerInterface
-
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__invoke()</strong> : <em>void</em> |
+| public | <strong>execute()</strong> : <em>void</em> |
 
 <hr />
 
 ### Class: \Behavioral\ChainOfResponsibility\ErrorHandler
 
-> Class ErrorHandler
-
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>__invoke()</strong> : <em>void</em> |
+| public | <strong>execute()</strong> : <em>void</em> |
 
 *This class implements [\Behavioral\ChainOfResponsibility\HandlerInterface](#interface-behavioralchainofresponsibilityhandlerinterface)*
 
