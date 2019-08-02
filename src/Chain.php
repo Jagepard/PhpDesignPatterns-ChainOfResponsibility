@@ -30,9 +30,14 @@ class Chain
 
     /**
      * @param string $event
+     * @throws \Exception
      */
     public function run(string $event): void
     {
+        if (!count($this->chain)) {
+            throw new \Exception('Chain is empty');
+        }
+
         foreach ($this->chain as $item) {
             $item->execute();
 
