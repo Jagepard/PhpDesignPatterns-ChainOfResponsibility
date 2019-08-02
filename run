@@ -6,11 +6,11 @@ namespace Behavioral\ChainOfResponsibility;
 require_once 'vendor/autoload.php';
 
 $chain = new Chain();
-$chain->addToChain(new NoticeHandler());
-$chain->addToChain(new WarningHandler());
-$chain->addToChain(new ErrorHandler());
 
 try {
+    $chain->addToChain(new NoticeHandler());
+    $chain->addToChain(new WarningHandler());
+    $chain->addToChain(new ErrorHandler());
     $chain->run(NoticeHandler::class);
     $chain->run(WarningHandler::class);
     $chain->run(ErrorHandler::class);
