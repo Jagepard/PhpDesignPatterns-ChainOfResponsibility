@@ -10,6 +10,11 @@ $chain->addToChain(new NoticeHandler());
 $chain->addToChain(new WarningHandler());
 $chain->addToChain(new ErrorHandler());
 
-$chain->run(ErrorHandler::class);
-$chain->run(WarningHandler::class);
-$chain->run(NoticeHandler::class);
+try {
+    $chain->run(NoticeHandler::class);
+    $chain->run(WarningHandler::class);
+    $chain->run(ErrorHandler::class);
+} catch (\Exception $e) {
+    printf('%s %s %s', 'Caught exception: ',  $e->getMessage(), "\n");
+}
+
