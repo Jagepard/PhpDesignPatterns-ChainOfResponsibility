@@ -15,10 +15,6 @@ use Behavioral\ChainOfResponsibility\NoticeHandler;
 use Behavioral\ChainOfResponsibility\WarningHandler;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
-/**
- * Class ChainOfResponsibilityTest
- * @package Behavioral\ChainOfResponsibility\Tests
- */
 class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 {
     /**

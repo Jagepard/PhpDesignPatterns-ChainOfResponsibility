@@ -21,20 +21,33 @@ class Chain
      */
     public function addToChain(HandlerInterface $handler): void
     {
+        if (array_key_exists(get_class($handler), $this->chain)) {
+            throw new \InvalidArgumentException('Handler already exists');
+        }
+
         $this->chain[get_class($handler)] = $handler;
     }
 
     /**
      * @param string $event
+     * @throws \Exception
      */
     public function run(string $event): void
     {
-        foreach ($this->chain as $item) {
-            $item->execute();
+        if (count($this->chain) === 0) {
+            throw new \Exception('Chain is empty');
+        }
 
-            if (get_class($item) === $event) {
-                return;
+        if (array_key_exists($event, $this->chain)) {
+            foreach ($this->chain as $item) {
+                $item->execute();
+
+                if (get_class($item) === $event) {
+                    return;
+                }
             }
         }
+
+        throw new \InvalidArgumentException('Item does not exist in the Chain');
     }
 }
