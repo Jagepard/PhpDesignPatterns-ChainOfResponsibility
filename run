@@ -15,6 +15,6 @@ try {
     $chain->run(WarningHandler::class);
     $chain->run(ErrorHandler::class);
 } catch (\Exception $e) {
-    printf('%s %s %s', 'Caught exception: ',  $e->getMessage(), "\n");
+    printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
 }
 
