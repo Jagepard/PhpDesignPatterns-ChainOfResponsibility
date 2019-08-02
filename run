@@ -17,4 +17,3 @@ try {
 } catch (\Exception $e) {
     printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
 }
-
