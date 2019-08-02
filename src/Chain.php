@@ -34,16 +34,20 @@ class Chain
      */
     public function run(string $event): void
     {
-        if (!count($this->chain)) {
+        if (count($this->chain) === 0) {
             throw new \Exception('Chain is empty');
         }
 
-        foreach ($this->chain as $item) {
-            $item->execute();
+        if (array_key_exists($event, $this->chain)) {
+            foreach ($this->chain as $item) {
+                $item->execute();
 
-            if (get_class($item) === $event) {
-                return;
+                if (get_class($item) === $event) {
+                    return;
+                }
             }
         }
+
+        throw new \InvalidArgumentException('Item does not exist in the Chain');
     }
 }
