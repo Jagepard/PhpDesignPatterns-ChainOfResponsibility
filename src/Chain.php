@@ -21,6 +21,10 @@ class Chain
      */
     public function addToChain(HandlerInterface $handler): void
     {
+        if (array_key_exists(get_class($handler), $this->chain)) {
+            throw new \InvalidArgumentException('Handler already exists');
+        }
+
         $this->chain[get_class($handler)] = $handler;
     }
 
