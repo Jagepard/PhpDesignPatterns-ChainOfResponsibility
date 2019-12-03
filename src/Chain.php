@@ -3,13 +3,13 @@
 declare(strict_types=1);
 
 /**
- * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\ChainOfResponsibility;
 
-class Chain
+class Chain implements ChainInterface
 {
     /**
      * @var array
@@ -21,28 +21,29 @@ class Chain
      */
     public function addToChain(HandlerInterface $handler): void
     {
-        if (array_key_exists(get_class($handler), $this->chain)) {
+        $handlerName = get_class($handler);
+
+        if (array_key_exists($handlerName, $this->chain)) {
             throw new \InvalidArgumentException('Handler already exists');
         }
 
-        $this->chain[get_class($handler)] = $handler;
+        $this->chain[$handlerName] = $handler;
     }
 
     /**
      * @param string $event
-     * @throws \Exception
      */
     public function run(string $event): void
     {
-        if (count($this->chain) === 0) {
+        if (!count($this->chain)) {
             throw new \Exception('Chain is empty');
         }
 
         if (array_key_exists($event, $this->chain)) {
-            foreach ($this->chain as $item) {
-                $item->execute();
+            foreach ($this->chain as $handler) {
+                $handler->execute();
 
-                if (get_class($item) === $event) {
+                if (get_class($handler) === $event) {
                     return;
                 }
             }

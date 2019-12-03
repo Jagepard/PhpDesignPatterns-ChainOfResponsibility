@@ -1,9 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
 /**
- * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
@@ -11,5 +9,8 @@ namespace Behavioral\ChainOfResponsibility;
 
 class ErrorHandler implements HandlerInterface
 {
-    use MiddlewareTrait;
+    public function execute(): void
+    {
+        printf('%s' . PHP_EOL, __CLASS__);
+    }
 }
