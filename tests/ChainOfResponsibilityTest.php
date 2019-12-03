@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types=1);
-
 /**
- * @author    : Korotkov Danila <dankorot@gmail.com>
- * @license   https://mit-license.org/ MIT
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
  */
 
 namespace Behavioral\ChainOfResponsibility\Tests;
@@ -13,12 +11,13 @@ use Behavioral\ChainOfResponsibility\Chain;
 use Behavioral\ChainOfResponsibility\ErrorHandler;
 use Behavioral\ChainOfResponsibility\NoticeHandler;
 use Behavioral\ChainOfResponsibility\WarningHandler;
+use Behavioral\ChainOfResponsibility\ChainInterface;
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
 class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var Chain
+     * @var ChainInterface
      */
     protected $chain;
 
