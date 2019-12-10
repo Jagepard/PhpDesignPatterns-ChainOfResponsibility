@@ -34,7 +34,7 @@ class Chain implements ChainInterface
      * @param  string  $handlerName
      * @throws \Exception
      */
-    public function run(string $handlerName): void
+    public function execute(string $handlerName): void
     {
         if (!count($this->chain)) {
             throw new \Exception('The chain is empty');
