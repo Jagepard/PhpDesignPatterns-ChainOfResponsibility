@@ -11,6 +11,6 @@ class ErrorHandler implements HandlerInterface
 {
     public function execute(): void
     {
-        printf('%s' . PHP_EOL, __CLASS__);
+        printf('%s'.PHP_EOL, __CLASS__);
     }
 }

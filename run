@@ -11,9 +11,9 @@ try {
     $chain->addToChain(new NoticeHandler());
     $chain->addToChain(new WarningHandler());
     $chain->addToChain(new ErrorHandler());
-    $chain->run(NoticeHandler::class);
-    $chain->run(WarningHandler::class);
-    $chain->run(ErrorHandler::class);
+    $chain->execute(NoticeHandler::class);
+    $chain->execute(WarningHandler::class);
+    $chain->execute(ErrorHandler::class);
 } catch (\Exception $e) {
-    printf('%s', 'Caught exception: ' . $e->getMessage() . "\n");
+    printf('%s', 'Caught exception: '.$e->getMessage()."\n");
 }
