@@ -37,7 +37,7 @@ class Chain implements ChainInterface
     public function run(string $handlerName): void
     {
         if (!count($this->chain)) {
-            throw new \Exception('Chain is empty');
+            throw new \Exception('The chain is empty');
         }
 
         if (array_key_exists($handlerName, $this->chain)) {
@@ -50,6 +50,6 @@ class Chain implements ChainInterface
             }
         }
 
-        throw new \InvalidArgumentException('Handler does not exist in the Chain');
+        throw new \InvalidArgumentException('Handler does not exist in the chain');
     }
 }
