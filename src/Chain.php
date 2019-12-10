@@ -17,7 +17,7 @@ class Chain implements ChainInterface
     private $chain = [];
 
     /**
-     * @param HandlerInterface $handler
+     * @param  HandlerInterface  $handler
      */
     public function addToChain(HandlerInterface $handler): void
     {
@@ -31,24 +31,25 @@ class Chain implements ChainInterface
     }
 
     /**
-     * @param string $event
+     * @param  string  $handlerName
+     * @throws \Exception
      */
-    public function run(string $event): void
+    public function run(string $handlerName): void
     {
         if (!count($this->chain)) {
             throw new \Exception('Chain is empty');
         }
 
-        if (array_key_exists($event, $this->chain)) {
+        if (array_key_exists($handlerName, $this->chain)) {
             foreach ($this->chain as $handler) {
                 $handler->execute();
 
-                if (get_class($handler) === $event) {
+                if (get_class($handler) === $handlerName) {
                     return;
                 }
             }
         }
 
-        throw new \InvalidArgumentException('Item does not exist in the Chain');
+        throw new \InvalidArgumentException('Handler does not exist in the Chain');
     }
 }
