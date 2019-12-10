@@ -17,5 +17,5 @@ interface ChainInterface
     /**
      * @param  string  $handlerName
      */
-    public function run(string $handlerName): void;
+    public function execute(string $handlerName): void;
 }
