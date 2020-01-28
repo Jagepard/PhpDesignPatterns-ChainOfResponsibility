@@ -11,10 +11,7 @@ namespace Behavioral\ChainOfResponsibility;
 
 class Chain implements ChainInterface
 {
-    /**
-     * @var array
-     */
-    private $chain = [];
+    private array $chain = [];
 
     /**
      * @param  HandlerInterface  $handler
