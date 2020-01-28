@@ -5,7 +5,5 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
 
-# ChainOfResponsibility | [API](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/blob/master/docs.md "Documentation API")
+# ChainOfResponsibility 
 ```php run``` execute in terminal
-
-![ChainOfResponsibility](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/blob/master/UML.png)
