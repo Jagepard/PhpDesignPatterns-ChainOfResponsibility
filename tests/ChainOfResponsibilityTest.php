@@ -7,19 +7,18 @@
 
 namespace Behavioral\ChainOfResponsibility\Tests;
 
-use Behavioral\ChainOfResponsibility\Chain;
-use Behavioral\ChainOfResponsibility\ErrorHandler;
-use Behavioral\ChainOfResponsibility\NoticeHandler;
-use Behavioral\ChainOfResponsibility\WarningHandler;
-use Behavioral\ChainOfResponsibility\ChainInterface;
+use Behavioral\ChainOfResponsibility\{
+    Chain,
+    ErrorHandler,
+    NoticeHandler,
+    WarningHandler,
+    ChainInterface
+};
 use PHPUnit\Framework\TestCase as PHPUnit_Framework_TestCase;
 
 class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 {
-    /**
-     * @var ChainInterface
-     */
-    protected $chain;
+    protected ChainInterface $chain;
 
     protected function setUp(): void
     {
