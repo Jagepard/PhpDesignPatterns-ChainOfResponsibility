@@ -14,7 +14,7 @@ class Chain implements ChainInterface
     private array $chain = [];
 
     /**
-     * @param  HandlerInterface  $handler
+     * @param HandlerInterface $handler
      */
     public function addToChain(HandlerInterface $handler): void
     {
@@ -28,8 +28,7 @@ class Chain implements ChainInterface
     }
 
     /**
-     * @param  string  $handlerName
-     * @throws \Exception
+     * @param string $handlerName
      */
     public function execute(string $handlerName): void
     {
