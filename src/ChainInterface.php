@@ -10,12 +10,12 @@ namespace Behavioral\ChainOfResponsibility;
 interface ChainInterface
 {
     /**
-     * @param  HandlerInterface  $handler
+     * @param HandlerInterface $handler
      */
     public function addToChain(HandlerInterface $handler): void;
 
     /**
-     * @param  string  $handlerName
+     * @param string $handlerName
      */
     public function execute(string $handlerName): void;
 }
