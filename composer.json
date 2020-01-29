@@ -1,40 +1,40 @@
 {
-    "name"        : "php-design-patterns/chain-of-responsibility",
-    "description" : "PhpDesignPatterns",
-    "type"        : "library",
-    "keywords"    : [
+    "name": "php-design-patterns/chain-of-responsibility",
+    "description": "PhpDesignPatterns",
+    "type": "library",
+    "keywords": [
         "design-pattern",
         "chain-of-responsibility"
     ],
-    "license"     : "MIT",
-    "authors"     : [
+    "license": "MIT",
+    "authors": [
         {
-            "name"    : "Jagepard",
-            "email"   : "jagepard@yandex.ru",
+            "name": "Jagepard",
+            "email": "jagepard@yandex.ru",
             "homepage": "https://jagepard.ru",
-            "role"    : "Developer"
+            "role": "Developer"
         }
     ],
-    "support"     : {
+    "support": {
         "email": "jagepard@yandex.ru",
         "skype": "jagepard.ru"
     },
     "require": {
         "php": ">=7.4"
     },
-    "require-dev"      : {
+    "require-dev": {
         "phpunit/phpunit": "^7"
     },
     "autoload": {
         "psr-4": {
-            "Behavioral\\ChainOfResponsibility\\":"src/"
+            "Behavioral\\ChainOfResponsibility\\": "src/"
         }
     },
-    "autoload-dev"     : {
+    "autoload-dev": {
         "psr-4": {
-            "Behavioral\\ChainOfResponsibility\\Tests\\":"tests/"
+            "Behavioral\\ChainOfResponsibility\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable" : true
+    "prefer-stable": true
 }
