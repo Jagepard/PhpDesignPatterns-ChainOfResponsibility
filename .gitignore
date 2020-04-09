@@ -8,3 +8,4 @@
 .vscode
 .idea
 .phpunit.result.cache
+/nbproject/
