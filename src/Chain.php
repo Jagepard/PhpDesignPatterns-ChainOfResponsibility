@@ -29,6 +29,7 @@ class Chain implements ChainInterface
 
     /**
      * @param string $handlerName
+     * @throws \Exception
      */
     public function execute(string $handlerName): void
     {
