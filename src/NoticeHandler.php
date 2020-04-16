@@ -7,10 +7,6 @@
 
 namespace Behavioral\ChainOfResponsibility;
 
-class NoticeHandler implements HandlerInterface
+class NoticeHandler extends AbstractHandler
 {
-    public function execute(): void
-    {
-        printf('%s'.PHP_EOL, __CLASS__);
-    }
 }
