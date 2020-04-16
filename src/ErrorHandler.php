@@ -7,10 +7,6 @@
 
 namespace Behavioral\ChainOfResponsibility;
 
-class ErrorHandler implements HandlerInterface
+class ErrorHandler extends AbstractHandler
 {
-    public function execute(): void
-    {
-        printf('%s'.PHP_EOL, __CLASS__);
-    }
 }

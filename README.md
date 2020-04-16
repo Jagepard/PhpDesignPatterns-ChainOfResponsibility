@@ -7,3 +7,10 @@
 
 # ChainOfResponsibility 
 ```php run``` execute in terminal
+
+## Result:
+```
+Behavioral\ChainOfResponsibility\NoticeHandler has handle an error
+Behavioral\ChainOfResponsibility\WarningHandler has handle an error
+Behavioral\ChainOfResponsibility\ErrorHandler has handle an error
+```
