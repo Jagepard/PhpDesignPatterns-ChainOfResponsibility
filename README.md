@@ -10,7 +10,7 @@
 
 ## Result:
 ```
-Behavioral\ChainOfResponsibility\NoticeHandler has handle an error
-Behavioral\ChainOfResponsibility\WarningHandler has handle an error
-Behavioral\ChainOfResponsibility\ErrorHandler has handle an error
+Behavioral\ChainOfResponsibility\NoticeHandler has handle an request
+Behavioral\ChainOfResponsibility\WarningHandler has handle an request
+Behavioral\ChainOfResponsibility\ErrorHandler has handle an request
 ```
