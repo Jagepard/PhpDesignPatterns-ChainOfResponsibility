@@ -21,7 +21,7 @@ abstract class AbstractHandler implements ChainInterface
     {
         // In case of compliance, the code is executed
         if ($request === get_called_class()) {
-            printf("%s %s".PHP_EOL, get_called_class(), "has handle an request");
+            printf("%s %s".PHP_EOL, get_called_class(), "has handle a request");
             return;
         }
 
