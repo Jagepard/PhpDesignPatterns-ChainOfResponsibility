@@ -26,7 +26,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
         $this->chain->execute(NoticeHandler::class);
         $notice = ob_get_clean();
 
-        $this->assertEquals($notice, NoticeHandler::class . " has handle an error\n");
+        $this->assertEquals($notice, NoticeHandler::class . " has handle an request\n");
     }
 
     public function testWarningHandler(): void
@@ -35,7 +35,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
         $this->chain->execute(WarningHandler::class);
         $warning = ob_get_clean();
 
-        $this->assertEquals($warning, WarningHandler::class . " has handle an error\n");
+        $this->assertEquals($warning, WarningHandler::class . " has handle an request\n");
     }
 
     public function testErrorHandler(): void
@@ -44,6 +44,6 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
         $this->chain->execute(ErrorHandler::class);
         $error = ob_get_clean();
 
-        $this->assertEquals($error, ErrorHandler::class . " has handle an error\n");
+        $this->assertEquals($error, ErrorHandler::class . " has handle an request\n");
     }
 }
