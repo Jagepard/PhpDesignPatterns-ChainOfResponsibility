@@ -5,13 +5,17 @@ namespace Behavioral\ChainOfResponsibility;
 
 require_once "./vendor/autoload.php";
 
-$chain  = new NoticeHandler();
+// Create the starting element of the chain
+$notice = new NoticeHandler();
 
 try {
-    $chain->setNext(new WarningHandler())->setNext(new ErrorHandler());
-    $chain->execute(NoticeHandler::class);
-    $chain->execute(WarningHandler::class);
-    $chain->execute(ErrorHandler::class);
+    // Add items to the chain.
+    $notice->setNext(new WarningHandler())->setNext(new ErrorHandler());
+
+    // Call the handler by name
+    $notice->execute(NoticeHandler::class);
+    $notice->execute(WarningHandler::class);
+    $notice->execute(ErrorHandler::class);
 } catch (\Exception $e) {
     printf("%s", "Caught exception: " . $e->getMessage() . "\n");
 }
