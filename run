@@ -8,14 +8,20 @@ require_once "./vendor/autoload.php";
 // Create the starting element of the chain
 $notice = new NoticeHandler();
 
+$mapping = [
+    "notice"  => NoticeHandler::class,
+    "warning" => WarningHandler::class,
+    "error"   => ErrorHandler::class
+];
+
 try {
     // Add items to the chain.
     $notice->setNext(new WarningHandler())->setNext(new ErrorHandler());
 
     // Call the handler by name
-    $notice->execute(NoticeHandler::class);
-    $notice->execute(WarningHandler::class);
-    $notice->execute(ErrorHandler::class);
+    $notice->execute($mapping["notice"]);
+    $notice->execute($mapping["warning"]);
+    $notice->execute($mapping["error"]);
 } catch (\Exception $e) {
     printf("%s", "Caught exception: " . $e->getMessage() . "\n");
 }
