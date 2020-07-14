@@ -7,22 +7,21 @@ require_once "./vendor/autoload.php";
 
 // Create the starting element of the chain
 $notice  = new NoticeHandler();
-$mapping = new Mapping();
 
 try {
     // Add items to the chain.
     $notice->setNext(new WarningHandler())->setNext(new ErrorHandler());
 
     // Call the handler by name
-    $notice->execute($mapping->notice);
-    $notice->execute($mapping->warning);
-    $notice->execute($mapping->error);
+    $notice->execute("notice");
+    $notice->execute("warning");
+    $notice->execute("error");
     print "\n";
 
     // Call all handlers in the chain before request by name
-    $notice->executeAllInChainBeforeRequest($mapping->notice);
-    $notice->executeAllInChainBeforeRequest($mapping->warning);
-    $notice->executeAllInChainBeforeRequest($mapping->error);
+    $notice->executeAllInChainBeforeRequest("notice");
+    $notice->executeAllInChainBeforeRequest("warning");
+    $notice->executeAllInChainBeforeRequest("error");
 } catch (\Exception $e) {
     printf("%s", "Caught exception: " . $e->getMessage() . "\n");
 }
