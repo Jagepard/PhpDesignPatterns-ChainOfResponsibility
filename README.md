@@ -13,4 +13,11 @@
 Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
 Behavioral\ChainOfResponsibility\WarningHandler has handle a request
 Behavioral\ChainOfResponsibility\ErrorHandler has handle a request
+
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\WarningHandler has handle a request
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\WarningHandler has handle a request
+Behavioral\ChainOfResponsibility\ErrorHandler has handle a request
 ```

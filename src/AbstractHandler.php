@@ -21,7 +21,7 @@ abstract class AbstractHandler implements ChainInterface
     {
         // In case of compliance, the code is executed
         if ($request === get_called_class()) {
-            printf("%s %s".PHP_EOL, get_called_class(), "has handle a request");
+            printf("%s %s\n", get_called_class(), "has handle a request");
             return;
         }
 
@@ -31,6 +31,22 @@ abstract class AbstractHandler implements ChainInterface
 
         // Passed to the next handler
         $this->nextHandler->execute($request);
+    }
+
+    public function executeAllInChainBeforeRequest(string $request): void
+    {
+        printf("%s %s\n", get_called_class(), "has handle a request");
+
+        if ($request === get_called_class()) {
+            return;
+        }
+
+        if (!isset($this->nextHandler)) {
+            throw new \InvalidArgumentException($request . " does not exist in the chain");
+        }
+
+        // Passed to the next handler
+        $this->nextHandler->executeAllInChainBeforeRequest($request);
     }
 
     /**
