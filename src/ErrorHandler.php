@@ -9,4 +9,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 class ErrorHandler extends AbstractHandler
 {
+    protected string $name = "error";
 }
