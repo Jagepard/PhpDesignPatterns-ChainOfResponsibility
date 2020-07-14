@@ -9,6 +9,7 @@ namespace Behavioral\ChainOfResponsibility;
 
 abstract class AbstractHandler implements ChainInterface
 {
+    protected string $name;
     protected AbstractHandler $nextHandler;
 
     /**
@@ -20,7 +21,7 @@ abstract class AbstractHandler implements ChainInterface
     public function execute(string $request): void
     {
         // In case of compliance, the code is executed
-        if ($request === get_called_class()) {
+        if ($request === $this->getName()) {
             printf("%s %s\n", get_called_class(), "has handle a request");
             return;
         }
@@ -37,7 +38,7 @@ abstract class AbstractHandler implements ChainInterface
     {
         printf("%s %s\n", get_called_class(), "has handle a request");
 
-        if ($request === get_called_class()) {
+        if ($request === $this->getName()) {
             return;
         }
 
@@ -59,5 +60,13 @@ abstract class AbstractHandler implements ChainInterface
     {
         $this->nextHandler = $handler;
         return $handler;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
 }

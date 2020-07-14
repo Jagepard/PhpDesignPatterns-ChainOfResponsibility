@@ -9,4 +9,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 class WarningHandler extends AbstractHandler
 {
+    protected string $name = "warning";
 }
