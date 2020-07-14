@@ -17,37 +17,31 @@ abstract class AbstractHandler implements ChainInterface
      * if not, then it is passed along the chain to the next handler
      *
      * @param string $request
+     * @param bool $allInChain
      */
-    public function execute(string $request): void
+    public function execute(string $request, bool $allInChain = false): void
     {
-        // In case of compliance, the code is executed
-        if ($request === $this->getName()) {
+        if ($allInChain) {
             printf("%s %s\n", get_called_class(), "has handle a request");
-            return;
+
+            if ($request === $this->getName()) {
+                return;
+            }
+        } else {
+            // In case of compliance, the code is executed
+            if ($request === $this->getName()) {
+                printf("%s %s\n", get_called_class(), "has handle a request");
+                return;
+            }
         }
+
 
         if (!isset($this->nextHandler)) {
             throw new \InvalidArgumentException($request . " does not exist in the chain");
         }
 
         // Passed to the next handler
-        $this->nextHandler->execute($request);
-    }
-
-    public function executeAllInChainBeforeRequest(string $request): void
-    {
-        printf("%s %s\n", get_called_class(), "has handle a request");
-
-        if ($request === $this->getName()) {
-            return;
-        }
-
-        if (!isset($this->nextHandler)) {
-            throw new \InvalidArgumentException($request . " does not exist in the chain");
-        }
-
-        // Passed to the next handler
-        $this->nextHandler->executeAllInChainBeforeRequest($request);
+        $this->nextHandler->execute($request, $allInChain);
     }
 
     /**
