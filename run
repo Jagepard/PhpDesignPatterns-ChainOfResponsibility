@@ -17,6 +17,11 @@ try {
     $notice->execute($mapping->notice);
     $notice->execute($mapping->warning);
     $notice->execute($mapping->error);
+
+    // Call all handlers in the chain before request by name
+    $notice->executeAllInChainBeforeRequest($mapping->notice);
+    $notice->executeAllInChainBeforeRequest($mapping->warning);
+    $notice->executeAllInChainBeforeRequest($mapping->error);
 } catch (\Exception $e) {
     printf("%s", "Caught exception: " . $e->getMessage() . "\n");
 }
