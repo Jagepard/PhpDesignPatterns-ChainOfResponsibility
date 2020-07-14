@@ -10,7 +10,14 @@
 
 ## Result:
 ```
-Behavioral\ChainOfResponsibility\NoticeHandler has handle an error
-Behavioral\ChainOfResponsibility\WarningHandler has handle an error
-Behavioral\ChainOfResponsibility\ErrorHandler has handle an error
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\WarningHandler has handle a request
+Behavioral\ChainOfResponsibility\ErrorHandler has handle a request
+
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\WarningHandler has handle a request
+Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
+Behavioral\ChainOfResponsibility\WarningHandler has handle a request
+Behavioral\ChainOfResponsibility\ErrorHandler has handle a request
 ```
