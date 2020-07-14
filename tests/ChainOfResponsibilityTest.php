@@ -46,4 +46,38 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($error, ErrorHandler::class . " has handle a request\n");
     }
+
+    public function testAllNoticeHandler(): void
+    {
+        ob_start();
+        $this->chain->executeAllInChainBeforeRequest(NoticeHandler::class);
+        $notice = ob_get_clean();
+
+        $this->assertEquals($notice, NoticeHandler::class . " has handle a request\n");
+    }
+
+    public function testAllWarningHandler(): void
+    {
+        ob_start();
+        $this->chain->executeAllInChainBeforeRequest(WarningHandler::class);
+        $warning = ob_get_clean();
+
+        $this->assertEquals($warning,
+            NoticeHandler::class . " has handle a request\n"
+            . WarningHandler::class . " has handle a request\n"
+        );
+    }
+
+    public function testAllErrorHandler(): void
+    {
+        ob_start();
+        $this->chain->executeAllInChainBeforeRequest(ErrorHandler::class);
+        $error = ob_get_clean();
+
+        $this->assertEquals($error,
+            NoticeHandler::class . " has handle a request\n"
+            . WarningHandler::class . " has handle a request\n"
+            . ErrorHandler::class . " has handle a request\n"
+        );
+    }
 }
