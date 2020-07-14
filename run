@@ -17,6 +17,7 @@ try {
     $notice->execute($mapping->notice);
     $notice->execute($mapping->warning);
     $notice->execute($mapping->error);
+    print "\n";
 
     // Call all handlers in the chain before request by name
     $notice->executeAllInChainBeforeRequest($mapping->notice);
