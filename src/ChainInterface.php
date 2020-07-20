@@ -9,8 +9,5 @@ namespace Behavioral\ChainOfResponsibility;
 
 interface ChainInterface
 {
-    /**
-     * @param string $request
-     */
     public function execute(string $request): void;
 }
