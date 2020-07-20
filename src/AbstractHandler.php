@@ -15,9 +15,6 @@ abstract class AbstractHandler implements ChainInterface
     /**
      * If the condition matches, code is executed;
      * if not, then it is passed along the chain to the next handler
-     *
-     * @param string $request
-     * @param bool $allInChain
      */
     public function execute(string $request, bool $allInChain = false): void
     {
@@ -35,7 +32,6 @@ abstract class AbstractHandler implements ChainInterface
             }
         }
 
-
         if (!isset($this->nextHandler)) {
             throw new \InvalidArgumentException($request . " does not exist in the chain");
         }
@@ -46,9 +42,6 @@ abstract class AbstractHandler implements ChainInterface
 
     /**
      * Adds the next handler to the chain
-     *
-     * @param AbstractHandler $handler
-     * @return AbstractHandler
      */
     public function setNext(AbstractHandler $handler): AbstractHandler
     {
@@ -56,9 +49,6 @@ abstract class AbstractHandler implements ChainInterface
         return $handler;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
