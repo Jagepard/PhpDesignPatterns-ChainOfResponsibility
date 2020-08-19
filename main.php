@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 
 namespace Behavioral\ChainOfResponsibility;
@@ -12,13 +11,13 @@ try {
     // Add items to the chain.
     $notice->setNext(new WarningHandler())->setNext(new ErrorHandler());
 
-    // Call the handler by name
+    printf("%s", "Call the handler by name:\n");
     $notice->execute("notice");
     $notice->execute("warning");
     $notice->execute("error");
     print "\n";
 
-    // Call all handlers in the chain before request by name
+    printf("%s", "Call all handlers in the chain before request by name:\n");
     $notice->execute("notice", true);
     $notice->execute("warning", true);
     $notice->execute("error", true);
