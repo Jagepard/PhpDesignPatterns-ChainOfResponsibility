@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author  : Korotkov Danila <dankorot@gmail.com>
+ * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
