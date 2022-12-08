@@ -23,7 +23,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testNoticeHandler(): void
     {
         ob_start();
-        $this->chain->execute("notice");
+        $this->chain->execute(NoticeHandler::class);
         $notice = ob_get_clean();
 
         $this->assertEquals($notice, NoticeHandler::class . " has handle a request\n");
@@ -32,7 +32,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testWarningHandler(): void
     {
         ob_start();
-        $this->chain->execute("warning");
+        $this->chain->execute(WarningHandler::class);
         $warning = ob_get_clean();
 
         $this->assertEquals($warning, WarningHandler::class . " has handle a request\n");
@@ -41,7 +41,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testErrorHandler(): void
     {
         ob_start();
-        $this->chain->execute("error");
+        $this->chain->execute(ErrorHandler::class);
         $error = ob_get_clean();
 
         $this->assertEquals($error, ErrorHandler::class . " has handle a request\n");
@@ -50,7 +50,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testAllNoticeHandler(): void
     {
         ob_start();
-        $this->chain->execute("notice", true);
+        $this->chain->execute(NoticeHandler::class, true);
         $notice = ob_get_clean();
 
         $this->assertEquals($notice, NoticeHandler::class . " has handle a request\n");
@@ -59,7 +59,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testAllWarningHandler(): void
     {
         ob_start();
-        $this->chain->execute("warning", true);
+        $this->chain->execute(WarningHandler::class, true);
         $warning = ob_get_clean();
 
         $this->assertEquals($warning,
@@ -71,7 +71,7 @@ class ChainOfResponsibilityTest extends PHPUnit_Framework_TestCase
     public function testAllErrorHandler(): void
     {
         ob_start();
-        $this->chain->execute("error", true);
+        $this->chain->execute(ErrorHandler::class, true);
         $error = ob_get_clean();
 
         $this->assertEquals($error,
