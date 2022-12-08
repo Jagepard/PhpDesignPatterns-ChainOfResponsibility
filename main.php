@@ -14,15 +14,15 @@ try {
     $notice->setNext(new WarningHandler())->setNext(new ErrorHandler());
 
     printf("%s", "Call the handler by name:\n");
-    $notice->execute("notice");
-    $notice->execute("warning");
-    $notice->execute("error");
+    $notice->execute(NoticeHandler::class);
+    $notice->execute(WarningHandler::class);
+    $notice->execute(ErrorHandler::class);
     print "\n";
 
     printf("%s", "Call all handlers in the chain before request by name:\n");
-    $notice->execute("notice", true);
-    $notice->execute("warning", true);
-    $notice->execute("error", true);
+    $notice->execute(NoticeHandler::class, true);
+    $notice->execute(WarningHandler::class, true);
+    $notice->execute(ErrorHandler::class, true);
 } catch (\Exception $e) {
     printf("%s", "Caught exception: " . $e->getMessage() . "\n");
 }
