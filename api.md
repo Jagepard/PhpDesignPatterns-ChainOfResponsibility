@@ -1,61 +1,51 @@
 ## Table of contents
+- [Behavioral\ChainOfResponsibility\AbstractHandler](#behavioral_chainofresponsibility_abstracthandler)
+- [Behavioral\ChainOfResponsibility\ChainInterface](#behavioral_chainofresponsibility_chaininterface)
+- [Behavioral\ChainOfResponsibility\ErrorHandler](#behavioral_chainofresponsibility_errorhandler)
+- [Behavioral\ChainOfResponsibility\NoticeHandler](#behavioral_chainofresponsibility_noticehandler)
+- [Behavioral\ChainOfResponsibility\WarningHandler](#behavioral_chainofresponsibility_warninghandler)
+<hr>
 
-- [\Behavioral\ChainOfResponsibility\AbstractHandler (abstract)](#class-behavioralchainofresponsibilityabstracthandler-abstract)
-- [\Behavioral\ChainOfResponsibility\ChainInterface (interface)](#interface-behavioralchainofresponsibilitychaininterface)
-- [\Behavioral\ChainOfResponsibility\ErrorHandler](#class-behavioralchainofresponsibilityerrorhandler)
-- [\Behavioral\ChainOfResponsibility\NoticeHandler](#class-behavioralchainofresponsibilitynoticehandler)
-- [\Behavioral\ChainOfResponsibility\WarningHandler](#class-behavioralchainofresponsibilitywarninghandler)
+<a id="behavioral_chainofresponsibility_abstracthandler"></a>
 
-<hr />
-
-### Class: \Behavioral\ChainOfResponsibility\AbstractHandler (abstract)
-
+### Class: Behavioral\ChainOfResponsibility\AbstractHandler
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute(</strong><em>\string</em> <strong>$request</strong>, <em>\bool</em> <strong>$allInChain=false</strong>)</strong> : <em>void</em><br /><em>If the condition matches, code is executed; if not, then it is passed along the chain to the next handler</em> |
-| public | <strong>getName()</strong> : <em>mixed</em> |
-| public | <strong>setNext(</strong><em>[\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)</em> <strong>$handler</strong>)</strong> : <em>void</em><br /><em>Adds the next handler to the chain</em> |
+|public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
+|public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
 
-*This class implements [\Behavioral\ChainOfResponsibility\ChainInterface](#interface-behavioralchainofresponsibilitychaininterface)*
 
-<hr />
+<a id="behavioral_chainofresponsibility_chaininterface"></a>
 
-### Interface: \Behavioral\ChainOfResponsibility\ChainInterface
-
+### Class: Behavioral\ChainOfResponsibility\ChainInterface
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>execute(</strong><em>\string</em> <strong>$request</strong>)</strong> : <em>void</em> |
+|abstract public|<em><strong>execute</strong>( string $request ): void</em><br>|
 
-<hr />
 
-### Class: \Behavioral\ChainOfResponsibility\ErrorHandler
+<a id="behavioral_chainofresponsibility_errorhandler"></a>
 
+### Class: Behavioral\ChainOfResponsibility\ErrorHandler
 | Visibility | Function |
 |:-----------|:---------|
+|public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
+|public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
 
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
-*This class implements [\Behavioral\ChainOfResponsibility\ChainInterface](#interface-behavioralchainofresponsibilitychaininterface)*
+<a id="behavioral_chainofresponsibility_noticehandler"></a>
 
-<hr />
-
-### Class: \Behavioral\ChainOfResponsibility\NoticeHandler
-
+### Class: Behavioral\ChainOfResponsibility\NoticeHandler
 | Visibility | Function |
 |:-----------|:---------|
+|public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
+|public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
 
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
 
-*This class implements [\Behavioral\ChainOfResponsibility\ChainInterface](#interface-behavioralchainofresponsibilitychaininterface)*
+<a id="behavioral_chainofresponsibility_warninghandler"></a>
 
-<hr />
-
-### Class: \Behavioral\ChainOfResponsibility\WarningHandler
-
+### Class: Behavioral\ChainOfResponsibility\WarningHandler
 | Visibility | Function |
 |:-----------|:---------|
-
-*This class extends [\Behavioral\ChainOfResponsibility\AbstractHandler](#class-behavioralchainofresponsibilityabstracthandler-abstract)*
-
-*This class implements [\Behavioral\ChainOfResponsibility\ChainInterface](#interface-behavioralchainofresponsibilitychaininterface)*
-
+|public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
+|public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
+<hr>
