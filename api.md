@@ -9,6 +9,7 @@
 <a id="behavioral_chainofresponsibility_abstracthandler"></a>
 
 ### Class: Behavioral\ChainOfResponsibility\AbstractHandler
+##### implements [Behavioral\ChainOfResponsibility\ChainInterface](#behavioral_chainofresponsibility_chaininterface)
 | Visibility | Function |
 |:-----------|:---------|
 |public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
@@ -26,6 +27,8 @@
 <a id="behavioral_chainofresponsibility_errorhandler"></a>
 
 ### Class: Behavioral\ChainOfResponsibility\ErrorHandler
+##### extends [Behavioral\ChainOfResponsibility\AbstractHandler](#behavioral_chainofresponsibility_abstracthandler)
+##### implements [Behavioral\ChainOfResponsibility\ChainInterface](#behavioral_chainofresponsibility_chaininterface)
 | Visibility | Function |
 |:-----------|:---------|
 |public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
@@ -35,6 +38,8 @@
 <a id="behavioral_chainofresponsibility_noticehandler"></a>
 
 ### Class: Behavioral\ChainOfResponsibility\NoticeHandler
+##### extends [Behavioral\ChainOfResponsibility\AbstractHandler](#behavioral_chainofresponsibility_abstracthandler)
+##### implements [Behavioral\ChainOfResponsibility\ChainInterface](#behavioral_chainofresponsibility_chaininterface)
 | Visibility | Function |
 |:-----------|:---------|
 |public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
@@ -44,8 +49,12 @@
 <a id="behavioral_chainofresponsibility_warninghandler"></a>
 
 ### Class: Behavioral\ChainOfResponsibility\WarningHandler
+##### extends [Behavioral\ChainOfResponsibility\AbstractHandler](#behavioral_chainofresponsibility_abstracthandler)
+##### implements [Behavioral\ChainOfResponsibility\ChainInterface](#behavioral_chainofresponsibility_chaininterface)
 | Visibility | Function |
 |:-----------|:---------|
 |public|<em><strong>execute</strong>( string $request  bool $allInChain ): void</em><br>If the condition matches, code is executed;<br>if not, then it is passed along the chain to the next handler<br>Если условие совпадает, код выполняется;<br>Если нет, то он передается по цепочке следующему обработчику|
 |public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
 <hr>
+
+###### created with [Rudra-Markdown](#https://github.com/Jagepard/Rudra-Markdown)
