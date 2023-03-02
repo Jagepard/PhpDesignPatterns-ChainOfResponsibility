@@ -1,6 +1,6 @@
 [![Build Status](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-ChainOfResponsibility/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-ChainOfResponsibility/build-status/master)
-[![codecov](https://codecov.io/gh/Jagepard/PhpDesignPatterns-ChainOfResponsibility/branch/master/graph/badge.svg)](https://codecov.io/gh/Jagepard/PhpDesignPatterns-ChainOfResponsibility)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-ChainOfResponsibility/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-ChainOfResponsibility/?branch=master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/Jagepard/PhpDesignPatterns-ChainOfResponsibility/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Code Climate](https://codeclimate.com/github/Jagepard/PhpDesignPatterns-ChainOfResponsibility/badges/gpa.svg)](https://codeclimate.com/github/Jagepard/PhpDesignPatterns-ChainOfResponsibility)
 [![License: MIT](https://img.shields.io/badge/license-MIT-498e7f.svg)](https://mit-license.org/)
 -----
