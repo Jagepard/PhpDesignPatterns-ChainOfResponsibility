@@ -57,4 +57,4 @@
 |public|<em><strong>setNext</strong>( Behavioral\ChainOfResponsibility\AbstractHandler $handler ): Behavioral\ChainOfResponsibility\AbstractHandler</em><br>Adds the next handler to the chain<br>Добавляет следующий обработчик в цепочку|
 <hr>
 
-###### created with [Rudra-Markdown](#https://github.com/Jagepard/Rudra-Markdown)
+###### created with [Rudra-Documentation-Collector](#https://github.com/Jagepard/Rudra-Documentation-Collector)
