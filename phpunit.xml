@@ -11,6 +11,11 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </source>
     <logging>
         <log type="coverage-html" target="tests/build/coverage"/>
         <log type="coverage-text" target="tests/build/coverage.txt"/>
