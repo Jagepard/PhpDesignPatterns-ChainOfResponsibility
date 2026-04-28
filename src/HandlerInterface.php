@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Behavioral\ChainOfResponsibility;
 
-class ErrorHandler implements HandlerInterface
+interface HandlerInterface
 {
-    
+
 }

@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * @author  : Jagepard <jagepard@yandex.ru>
+ * @license https://mit-license.org/ MIT
+ */
+
+namespace Behavioral\ChainOfResponsibility;
+
+require_once "./vendor/autoload.php";
+
+// Добавляем элементы в цепочку.
+$chain = [
+    new NoticeHandler(),
+    new WarningHandler(),
+    new ErrorHandler()
+];
+
+try {
+    $handler = new ChainHandler($chain);
+
+    printf("%s", "Call the handler by name:\n");
+    $handler->execute(NoticeHandler::class);
+    $handler->execute(WarningHandler::class);
+    $handler->execute(ErrorHandler::class);
+    print "\n";
+
+    printf("%s", "Call all handlers in the chain before request by name:\n");
+    $handler->execute(NoticeHandler::class, true);
+    $handler->execute(WarningHandler::class, true);
+    $handler->execute(ErrorHandler::class, true);
+} catch (\Exception $e) {
+    printf("%s", "Caught exception: " . $e->getMessage() . "\n");
+}
