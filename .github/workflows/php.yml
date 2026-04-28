@@ -1,45 +1,71 @@
-name: PHPunit
+name: PHPUnit
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      # Шаг 1: Клонирование репозитория
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      # Шаг 2: Настройка PHP и расширений
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: xdebug
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      # Шаг 3: Валидация composer.json и composer.lock
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      # Шаг 4: Кэширование зависимостей Composer
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+      # Шаг 5: Установка зависимостей
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-    # - name: Run test suite
-    #   run: composer run-script test
+      # Шаг 6: Загрузка PHPUnit PHAR
+      - name: Download PHPUnit PHAR
+        run: |
+          wget https://phar.phpunit.de/phpunit.phar  
+          chmod +x phpunit.phar
+          mv phpunit.phar /usr/local/bin/phpunit
 
-    - name: PHPUnit (graychen)
-      uses: Graychen/phpunit-action@v1.0.0
-      with:
-        # Configuration file location
-        config: phpunit.xml
+      # Шаг 7: Проверка версии PHPUnit
+      - name: Check PHPUnit version
+        run: phpunit --version
+
+      # Шаг 8: Запуск тестов с генерацией отчета о покрытии
+      - name: Run PHPUnit tests with coverage
+        run: |
+          mkdir -p build/logs
+          phpunit --configuration phpunit.xml --coverage-clover build/logs/clover.xml --debug
+        env:
+          XDEBUG_MODE: coverage
+
+      # Шаг 9: Отправка данных о покрытии в Coveralls
+      - name: Send coverage to Coveralls
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: build/logs/clover.xml
