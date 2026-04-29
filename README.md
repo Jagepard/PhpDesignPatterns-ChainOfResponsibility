@@ -7,6 +7,11 @@
 # ChainOfResponsibility | [API](https://github.com/Jagepard/PhpDesignPatterns-ChainOfResponsibility/blob/master/api.md)
 ```php run``` execute in terminal
 
+- ✅ **ChainHandler** (массив) — основной вариант. Конфигурация через массив, явный поток.
+- 🗃️ **Legacy/AbstractHandler** — рекурсивный узел. Сохранён для истории и сравнения подходов.
+
+> Правило: если не уверен — используй массивный. Он проще, тестируемее и предсказуемее.
+
 ## Result:
 ```
 Behavioral\ChainOfResponsibility\NoticeHandler has handle a request
